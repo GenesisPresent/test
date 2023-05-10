@@ -18,7 +18,7 @@ local ChaseStart = game:GetService("ReplicatedStorage").GameData.ChaseStart
  
 local KeyChams = {}
 VisualsTab:AddToggle({
-        Name = "Key Chams",
+        Name = "มองกุญแจ",
         Default = false,
     Flag = "KeyToggle",
     Save = true,
@@ -59,7 +59,7 @@ coroutine.resume(KeyCoroutine)
  
 local BookChams = {}
 VisualsTab:AddToggle({
-        Name = "Book Chams",
+        Name = "มองสมุดในด่าน50",
         Default = false,
     Flag = "BookToggle",
     Save = true,
@@ -72,7 +72,7 @@ VisualsTab:AddToggle({
  
 local FigureChams = {}
 VisualsTab:AddToggle({
-        Name = "Figure Chams",
+        Name = "มองประตู/ตู้ซ่อน",
         Default = false,
     Flag = "FigureToggle",
     Save = true,
@@ -141,7 +141,7 @@ local CharTab = Window:MakeTab({
  
 local TargetWalkspeed
 CharTab:AddSlider({
-        Name = "Speed",
+        Name = "ความเร็วการวิ่ง",
         Min = 0,
         Max = 50,
         Default = 5,
@@ -161,7 +161,7 @@ pcl.Enabled = false
  
  
 CharTab:AddToggle({
-        Name = "Headlight",
+        Name = "เปิดไฟฉาย",
         Default = false,
     Callback = function(Value)
         pcl.Enabled = Value
@@ -176,13 +176,13 @@ GameTab:AddToggle({
 })
  
 GameTab:AddToggle({
-        Name = "Instant Interact",
+        Name = "เปิดลิ้นชักเก็บของอัตโนมัติ",
         Default = false,
     Flag = "InstantToggle",
     Save = true
 })
 GameTab:AddButton({
-        Name = "Skip level",
+        Name = "ข้ามด่าน",
         Callback = function()
         pcall(function()
             local HasKey = false
@@ -211,7 +211,7 @@ GameTab:AddButton({
 })
  
 GameTab:AddToggle({
-        Name = "Auto skip level",
+        Name = "วาร์ปข้ามด่านอัตโนมัติ",
         Default = false,
     Save = false,
     Flag = "AutoSkip"
@@ -251,7 +251,7 @@ end)
 coroutine.resume(AutoSkipCoro)
  
 GameTab:AddButton({
-        Name = "No jumpscares",
+        Name = "ปิดการกระโดด",
         Callback = function()
         pcall(function()
             game:GetService("ReplicatedStorage").Bricks.Jumpscare:Destroy()
@@ -259,13 +259,13 @@ GameTab:AddButton({
         end    
 })
 GameTab:AddToggle({
-        Name = "Avoid Rush/Ambush",
+        Name = "ตรวจสอบ Rush/Ambush",
         Default = false,
     Flag = "AvoidRushToggle",
     Save = true
 })
 GameTab:AddToggle({
-        Name = "No Screech",
+        Name = "ไม่มีเสียงกรีดร้",
         Default = false,
     Flag = "ScreechToggle",
     Save = true
