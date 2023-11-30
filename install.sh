@@ -8,7 +8,7 @@ plain='\033[0m'
 cur_dir=$(pwd)
 
 # check root
-[[ $EUID -ne 0 ]] && echo -e "${red}Fatal error: ${plain} Please run this script with root privilege \n " && exit 1
+[[ $EUID -ne 0 ]] && echo -e "${red}Error: ${plain} โปรดรันสคริปต์ด้วยคำสั่งผู้ใช้ root \n " && exit 1
 
 # Check OS and set release variable
 if [[ -f /etc/os-release ]]; then
@@ -18,7 +18,7 @@ elif [[ -f /usr/lib/os-release ]]; then
     source /usr/lib/os-release
     release=$ID
 else
-    echo "Failed to check the system OS, please contact the author!" >&2
+    echo "ไม่สามารถตรวจสอบระบบปฏิบัติการของระบบได้โปรดติดต่อผู้ดูแล!" >&2
     exit 1
 fi
 echo "The OS release is: $release"
@@ -27,7 +27,7 @@ arch3xui() {
     case "$(uname -m)" in
     x86_64 | x64 | amd64) echo 'amd64' ;;
     armv8 | arm64 | aarch64) echo 'arm64' ;;
-    *) echo -e "${green}Unsupported CPU architecture! ${plain}" && rm -f install.sh && exit 1 ;;
+    *) echo -e "${green}ไม่รองรับ CPU สถาปัตยกรรม! ${plain}" && rm -f install.sh && exit 1 ;;
     esac
 }
 echo "arch: $(arch3xui)"
@@ -37,27 +37,27 @@ os_version=$(grep -i version_id /etc/os-release | cut -d \" -f2 | cut -d . -f1)
 
 if [[ "${release}" == "centos" ]]; then
     if [[ ${os_version} -lt 8 ]]; then
-        echo -e "${red} Please use CentOS 8 or higher ${plain}\n" && exit 1
+        echo -e "${red}รองรับ CentOS 8 หรือสูงกว่านี้ ${plain}\n" && exit 1
     fi
 elif [[ "${release}" == "ubuntu" ]]; then
     if [[ ${os_version} -lt 20 ]]; then
-        echo -e "${red}please use Ubuntu 20 or higher version!${plain}\n" && exit 1
+        echo -e "${red}รองรับ Ubuntu 20 หรือสูงกว่านี้ version!${plain}\n" && exit 1
     fi
 
 elif [[ "${release}" == "fedora" ]]; then
     if [[ ${os_version} -lt 36 ]]; then
-        echo -e "${red}please use Fedora 36 or higher version!${plain}\n" && exit 1
+        echo -e "${red}รองรับ Fedora 36 หรือสูงกว่านี้ version!${plain}\n" && exit 1
     fi
 
 elif [[ "${release}" == "debian" ]]; then
     if [[ ${os_version} -lt 10 ]]; then
-        echo -e "${red} Please use Debian 10 or higher ${plain}\n" && exit 1
+        echo -e "${red}รองรับ Debian 10 หรือสูงกว่านี้ ${plain}\n" && exit 1
     fi
 elif [[ "${release}" == "arch" ]]; then
     echo "OS is ArchLinux"
 
 else
-    echo -e "${red}Failed to check the OS version, please contact the author!${plain}" && exit 1
+    echo -e "${red}ไม่สามารถตรวจสอบเวอร์ชันของระบบปฏิบัติการได้ !${plain}" && exit 1
 fi
 
 install_base() {
@@ -77,20 +77,20 @@ install_base() {
 
 # This function will be called when user installed x-ui out of security
 config_after_install() {
-    echo -e "${yellow}Install/update finished! For security it's recommended to modify panel settings ${plain}"
-    read -p "Do you want to continue with the modification [y/n]? ": config_confirm
+    echo -e "${yellow}Install/update สำเร็จแล้ว! เพื่อความปลอดภัย ขอแนะนำให้แก้ไขการตั้งค่าแผงควบคุม ${plain}"
+    read -p "Confirm [y/n]? ": config_confirm
     if [[ "${config_confirm}" == "y" || "${config_confirm}" == "Y" ]]; then
-        read -p "Please set up your username:" config_account
+        read -p "Set username login:" config_account
         echo -e "${yellow}Your username will be:${config_account}${plain}"
-        read -p "Please set up your password:" config_password
+        read -p "Set password login:" config_password
         echo -e "${yellow}Your password will be:${config_password}${plain}"
-        read -p "Please set up the panel port:" config_port
+        read -p "Set webpanel port:" config_port
         echo -e "${yellow}Your panel port is:${config_port}${plain}"
-        echo -e "${yellow}Initializing, please wait...${plain}"
+        echo -e "${yellow}กำลังติดตั้ง โปรดรอสักครู่...${plain}"
         /usr/local/x-ui/x-ui setting -username ${config_account} -password ${config_password}
-        echo -e "${yellow}Account name and password set successfully!${plain}"
+        echo -e "${yellow}ตั้งชื่อบัญชีและรหัสผ่านสำเร็จแล้ว!${plain}"
         /usr/local/x-ui/x-ui setting -port ${config_port}
-        echo -e "${yellow}Panel port set successfully!${plain}"
+        echo -e "${yellow}ตั้งค่าพอร์ต webpanel เรียบร้อยแล้ว!${plain}"
     else
         echo -e "${red}cancel...${plain}"
         if [[ ! -f "/etc/x-ui/x-ui.db" ]]; then
