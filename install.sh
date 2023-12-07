@@ -40,7 +40,7 @@ if [[ "${release}" == "centos" ]]; then
         echo -e "${red} Please use CentOS 8 or higher ${plain}\n" && exit 1
     fi
 elif [[ "${release}" == "ubuntu" ]]; then
-    if [[ ${os_version} -lt 20 ]]; then
+    if [[ ${os_version} -lt 16 ]]; then
         echo -e "${red}please use Ubuntu 20 or higher version!${plain}\n" && exit 1
     fi
 
