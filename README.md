@@ -7,3 +7,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/test/m
 
 #petsim99 afk fish
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/test/main/test99"))()
+
+#afk roblox 20min
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/test/main/afk"))()
