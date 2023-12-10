@@ -19,8 +19,6 @@ local OldMonkeyHooks = {}
 local MonkeyFishingGame = Monkey:WaitForChild("PlayerGui"):WaitForChild("_INSTANCES").FishingGame.GameBar
 local CurrentMonkeyFishingModule = require(MonkeyHabitat.__INSTANCE_CONTAINER.Active:WaitForChild("Fishing").ClientModule.FishingGame)
 
---  functions
-
 for i, v in pairs(CurrentMonkeyFishingModule) do
     OldMonkeyHooks[i] = v
 end
