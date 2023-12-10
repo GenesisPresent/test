@@ -1,94 +1,256 @@
-local Rice = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
-local Credits = Instance.new("TextLabel")
-local Activate = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
-local OpenClose = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
+repeat wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
 
-Rice.Name = "Rice"
-Rice.Parent = game.CoreGui
-Rice.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+if getgenv().AntiAfkExecuted and thisoneissocoldww then 
+    getgenv().AntiAfkExecuted = false
+	getgenv().zamanbaslaticisi = false
+	game.CoreGui.thisoneissocoldww:Destroy()
+end
 
-Main.Name = "Main"
-Main.Parent = Rice
-Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.321207851, 0, 0.409807354, 0)
-Main.Size = UDim2.new(0, 295, 0, 116)
-Main.Visible = false
-Main.Active = true
-Main.Draggable =  true
+getgenv().AntiAfkExecuted = true
 
-Title.Name = "Title"
-Title.Parent = Main
-Title.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-Title.BorderSizePixel = 0
-Title.Size = UDim2.new(0, 295, 0, 16)
-Title.Font = Enum.Font.GothamBold
-Title.Text = "AFK-ROBLOX"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextScaled = true
-Title.TextSize = 12.000
-Title.TextWrapped = true
+local thisoneissocoldww = Instance.new("ScreenGui")
+local madebybloodofbatus = Instance.new("Frame")
+local UICornerw = Instance.new("UICorner")
+local DestroyButton = Instance.new("TextButton")
+local uselesslabelone = Instance.new("TextLabel")
+local timerlabel = Instance.new("TextLabel")
+local uselesslabeltwo = Instance.new("TextLabel")
+local fpslabel = Instance.new("TextLabel")
+local uselesslabelthree = Instance.new("TextLabel")
+local pinglabel = Instance.new("TextLabel")
+local uselessframeone = Instance.new("Frame")
+local UICornerww = Instance.new("UICorner")
+local uselesslabelfour = Instance.new("TextLabel")
 
-Credits.Name = "Credits"
-Credits.Parent = Main
-Credits.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-Credits.BorderSizePixel = 0
-Credits.Position = UDim2.new(0, 0, 0.861901641, 0)
-Credits.Size = UDim2.new(0, 295, 0, 16)
-Credits.Font = Enum.Font.GothamBold
-Credits.Text = "สคริปต์ใช้ AFK"
-Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
-Credits.TextScaled = true
-Credits.TextSize = 12.000
-Credits.TextWrapped = true
+thisoneissocoldww.Name = "thisoneissocoldww"
+thisoneissocoldww.Parent = game.CoreGui
+thisoneissocoldww.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Activate.Name = "Activate"
-Activate.Parent = Main
-Activate.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Activate.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Activate.BorderSizePixel = 0
-Activate.Position = UDim2.new(0.0330629945, 0, 0.243326917, 0)
-Activate.Size = UDim2.new(0, 274, 0, 59)
-Activate.Font = Enum.Font.GothamBold
-Activate.Text = "Activate"
-Activate.TextColor3 = Color3.fromRGB(0, 255, 127)
-Activate.TextSize = 43.000
-Activate.TextStrokeColor3 = Color3.fromRGB(102, 255, 115)
-Activate.MouseButton1Down:connect(function()
-	local vu = game:GetService("VirtualUser")
-	game:GetService("Players").LocalPlayer.Idled:connect(function()
-		vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		wait(1)
-		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-	end)
+madebybloodofbatus.Name = "madebybloodofbatus"
+madebybloodofbatus.Parent = thisoneissocoldww
+madebybloodofbatus.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+madebybloodofbatus.Position = UDim2.new(0.0854133144, 0, 0.13128835, 0)
+madebybloodofbatus.Size = UDim2.new(0, 225, 0, 96)
+
+UICornerw.Name = "UICornerw"
+UICornerw.Parent = madebybloodofbatus
+
+uselesslabelone.Name = "uselesslabelone"
+uselesslabelone.Parent = madebybloodofbatus
+uselesslabelone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+uselesslabelone.BackgroundTransparency = 1.000
+uselesslabelone.Position = UDim2.new(0.302473009, 0, 0, 0)
+uselesslabelone.Size = UDim2.new(0, 95, 0, 24)
+uselesslabelone.Font = Enum.Font.SourceSans
+uselesslabelone.Text = "AFK-ROBLOX"
+uselesslabelone.TextColor3 = Color3.fromRGB(255, 255, 255)
+uselesslabelone.TextSize = 14.000
+
+timerlabel.Name = "timerlabel"
+timerlabel.Parent = madebybloodofbatus
+timerlabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+timerlabel.BackgroundTransparency = 1.000
+timerlabel.Position = UDim2.new(0.65344125, 0, 0.68194294, 0)
+timerlabel.Size = UDim2.new(0, 60, 0, 24)
+timerlabel.Font = Enum.Font.SourceSans
+timerlabel.Text = "0:0:0"
+timerlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+timerlabel.TextSize = 14.000
+
+uselesslabeltwo.Name = "uselesslabeltwo"
+uselesslabeltwo.Parent = madebybloodofbatus
+uselesslabeltwo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+uselesslabeltwo.BackgroundTransparency = 1.000
+uselesslabeltwo.Position = UDim2.new(0.038864471, 0, 0.373806685, 0)
+uselesslabeltwo.Size = UDim2.new(0, 29, 0, 24)
+uselesslabeltwo.Font = Enum.Font.SourceSans
+uselesslabeltwo.Text = "Ping: "
+uselesslabeltwo.TextColor3 = Color3.fromRGB(255, 255, 255)
+uselesslabeltwo.TextSize = 14.000
+
+fpslabel.Name = "fpslabel"
+fpslabel.Parent = madebybloodofbatus
+fpslabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+fpslabel.BackgroundTransparency = 1.000
+fpslabel.Position = UDim2.new(0.724226236, 0, 0.358796299, 0)
+fpslabel.Size = UDim2.new(0, 55, 0, 24)
+fpslabel.Font = Enum.Font.SourceSans
+fpslabel.Text = "this contact dev"
+fpslabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+fpslabel.TextSize = 14.000
+
+uselesslabelthree.Name = "uselesslabelthree"
+uselesslabelthree.Parent = madebybloodofbatus
+uselesslabelthree.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+uselesslabelthree.BackgroundTransparency = 1.000
+uselesslabelthree.Position = UDim2.new(0.506917477, 0, 0.352585167, 0)
+uselesslabelthree.Size = UDim2.new(0, 26, 0, 24)
+uselesslabelthree.Font = Enum.Font.SourceSans
+uselesslabelthree.Text = "Fps: "
+uselesslabelthree.TextColor3 = Color3.fromRGB(255, 255, 255)
+uselesslabelthree.TextSize = 14.000
+
+pinglabel.Name = "pinglabel"
+pinglabel.Parent = madebybloodofbatus
+pinglabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+pinglabel.BackgroundTransparency = 1.000
+pinglabel.Position = UDim2.new(0.20330891, 0, 0.371578127, 0)
+pinglabel.Size = UDim2.new(0, 55, 0, 24)
+pinglabel.Font = Enum.Font.SourceSans
+pinglabel.Text = "if you see this"
+pinglabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+pinglabel.TextSize = 14.000
+pinglabel.TextWrapped = true
+
+uselessframeone.Name = "uselessframeone"
+uselessframeone.Parent = madebybloodofbatus
+uselessframeone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+uselessframeone.Position = UDim2.new(0.00444444455, 0, 0.243312627, 0)
+uselessframeone.Size = UDim2.new(0, 224, 0, 5)
+
+UICornerww.CornerRadius = UDim.new(0, 50)
+UICornerww.Name = "UICornerww"
+UICornerww.Parent = uselessframeone
+
+uselesslabelfour.Name = "uselesslabelfour"
+uselesslabelfour.Parent = madebybloodofbatus
+uselesslabelfour.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+uselesslabelfour.BackgroundTransparency = 1.000
+uselesslabelfour.Position = UDim2.new(0.0580285639, 0, 0.8125, 0)
+uselesslabelfour.Size = UDim2.new(0, 95, 0, 12)
+uselesslabelfour.Font = Enum.Font.SourceSans
+uselesslabelfour.Text = "เปิดใช้งานอยู่ตอนนี้"
+uselesslabelfour.TextColor3 = Color3.fromRGB(255, 255, 255)
+uselesslabelfour.TextSize = 14.000
+
+
+
+local Drag = game.CoreGui.thisoneissocoldww.madebybloodofbatus
+gsCoreGui = game:GetService("CoreGui")
+gsTween = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local dragging
+local dragInput
+local dragStart
+local startPos
+local function update(input)
+	local delta = input.Position - dragStart
+	local dragTime = 0.04
+	local SmoothDrag = {}
+	SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+	dragSmoothFunction:Play()
+end
+Drag.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = Drag.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+Drag.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		dragInput = input
+	end
+end)
+UserInputService.InputChanged:Connect(function(input)
+	if input == dragInput and dragging and Drag.Size then
+		update(input)
+	end
 end)
 
 
-UICorner.Parent = Activate
 
-OpenClose.Name = "Open/Close"
-OpenClose.Parent = Rice
-OpenClose.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-OpenClose.Position = UDim2.new(0.353924811, 0, 0.921739101, 0)
-OpenClose.Size = UDim2.new(0, 247, 0, 35)
-OpenClose.Font = Enum.Font.GothamBold
-OpenClose.Text = "เปิดเมนู/ปิดเมนู"
-OpenClose.TextColor3 = Color3.fromRGB(255, 255, 255)
-OpenClose.TextSize = 14.000
+local bbbatusxxxddddd = game:service'VirtualUser'
 
-UICorner_2.Parent = OpenClose
+game:service'Players'.LocalPlayer.Idled:connect(function()
+	bbbatusxxxddddd:CaptureController()
+	bbbatusxxxddddd:ClickButton2(Vector2.new())
+end)
 
-local function NERMBF_fake_script() -- OpenClose.LocalScript 
-	local script = Instance.new('LocalScript', OpenClose)
 
-	local frame = script.Parent.Parent.Main
-	
-	script.Parent.MouseButton1Click:Connect(function()
-		frame.Visible = not frame.Visible
-	end)
+
+
+local FPSsLabel = fpslabel
+local RunService = game:GetService("RunService")
+local RenderStepped = RunService.RenderStepped
+local sec = nil
+local FPS = {}
+
+local function fre()
+	local fr = tick()
+	for index = #FPS,1,-1 do
+		FPS[index + 1] = (FPS[index] >= fr - 1) and FPS[index] or nil
+	end
+	FPS[1] = fr
+	local fps = (tick() - sec >= 1 and #FPS) or (#FPS / (tick() - sec))
+	fps = math.floor(fps)
+	fpslabel.Text = fps
 end
-coroutine.wrap(NERMBF_fake_script)()
+
+
+sec = tick()
+RenderStepped:Connect(fre)
+
+
+
+
+spawn(function()
+	repeat
+		wait(1)
+		local ping = tonumber(game:GetService("Stats"):FindFirstChild("PerformanceStats").Ping:GetValue())
+		ping = math.floor(ping)
+		pinglabel.Text = ping
+
+
+
+	until pinglabel == nil
+end)
+
+local saniye = 0
+
+
+
+local dakika = 0
+
+
+
+local saat = 0
+
+
+
+
+getgenv().zamanbaslaticisi = true
+
+while true do
+
+
+		if getgenv().zamanbaslaticisi then
+
+			saniye = saniye + 1
+
+			wait(1)
+
+		end --if zaman baslaticisi end
+
+
+		if saniye >= 60 then
+			saniye = 0
+			dakika = dakika + 1
+
+		end --if saniye 60 end
+
+
+		if dakika >= 60 then
+			dakika = 0
+			saat = saat + 1
+
+		end --if dakika 60 end
+
+		timerlabel.Text = saat..":"..dakika..":"..saniye
+	end
