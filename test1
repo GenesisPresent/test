@@ -5,8 +5,8 @@ end
 pcall(function() getgenv().Stairway = true end)
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "More Info",
-		Text = 'Type "/console" in chat to know what this is for',
+		Title = "โปรดทราบ!!",
+		Text = 'สคริปต์กำลังทำงาน...',
 		Duration = 10,
 	})
 	
